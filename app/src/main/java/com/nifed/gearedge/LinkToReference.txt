@@ -1,0 +1,5 @@
+Link:
+https://github.com/SachinRupani/LoginWithJetpackCompose/blob/main/app/src/main/java/com/jodhpurtechies/composelogin/ui/screens/unauthenticated/registration/RegistrationViewModel.kt
+
+Структура взаимодействия TextField, State и ViewModel
+взята из проекта по ссылке
