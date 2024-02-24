@@ -15,34 +15,29 @@ import com.nifed.gearedge.ui.theme.GearedgeTheme
 @Composable
 fun CalculationScreen(
     calculationViewModel: CalculationViewModel = viewModel()
-){
-    val calculationState by remember{
+) {
+    val calculationState by remember {
         calculationViewModel.calculationState
     }
-    
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ){
-        CalculationInputs(
-            calculationState = calculationState,
-            onSpeedChange = {inputString ->
-                            calculationViewModel.onUiEvent(
-                                calculationEvent = CalculationEvent.SpeedChanged(
-                                    inputValue = inputString
-                                )
-                            )
-
-            },
-            onFeedRateChange = {inputString ->
-                calculationViewModel.onUiEvent(
-                    calculationEvent = CalculationEvent.FeedRateChanged(
-                        inputValue = inputString
-                    )
+    CalculationInputs(
+        calculationState = calculationState,
+        onSpeedChange = { inputString ->
+            calculationViewModel.onUiEvent(
+                calculationEvent = CalculationEvent.SpeedChanged(
+                    inputValue = inputString
                 )
+            )
 
-            })
-    }
+        },
+        onFeedRateChange = { inputString ->
+            calculationViewModel.onUiEvent(
+                calculationEvent = CalculationEvent.FeedRateChanged(
+                    inputValue = inputString
+                )
+            )
+
+        }
+    )
 }
 
 
