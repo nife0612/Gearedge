@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nifed.gearedge.R
 import com.nifed.gearedge.ui.common.GearEdgeTextField
+import com.nifed.gearedge.ui.screens.calculation.state.ButtonCalculationEvent
 import com.nifed.gearedge.ui.screens.calculation.state.CalculationState
 
 
@@ -24,7 +25,12 @@ import com.nifed.gearedge.ui.screens.calculation.state.CalculationState
 fun CalculationInputs(
     calculationState: CalculationState,
     onSizeChange: (String) -> Unit,
-    onFeedRateChange: (String) -> Unit
+    onFeedRateChange: (String) -> Unit,
+
+    onIncreaseSize: () -> Unit,
+    onDecreaseSize: () -> Unit,
+    onIncreaseFeedRate: () -> Unit,
+    onDecreaseFeedRate: () -> Unit
 ){
 
     val padding = 4.dp
@@ -47,8 +53,7 @@ fun CalculationInputs(
         ) {
 
 
-            OutlinedButton(onClick ={
-            }, modifier = Modifier
+            OutlinedButton(onClick =onDecreaseSize, modifier = Modifier
                 .weight(1f)
                 .padding(top = 6.dp)) {
                 Text(text = "-", fontSize = fontSize)
@@ -62,7 +67,7 @@ fun CalculationInputs(
                 imeAction = ImeAction.Next
             )
 
-            OutlinedButton(onClick = { /*TODO*/ }, modifier = Modifier
+            OutlinedButton(onClick = onIncreaseSize, modifier = Modifier
                 .weight(1f)
                 .padding(top = 6.dp)) {
                 Text(text = "+", fontSize = fontSize)
@@ -77,7 +82,7 @@ fun CalculationInputs(
 
 
             OutlinedButton(
-                onClick = { /*TODO*/ }, modifier = Modifier
+                onClick = onDecreaseFeedRate, modifier = Modifier
                     .weight(1f)
                     .padding(top = 6.dp)
             ) {
@@ -93,7 +98,7 @@ fun CalculationInputs(
             )
 
             OutlinedButton(
-                onClick = { /*TODO*/ }, modifier = Modifier
+                onClick = onIncreaseFeedRate, modifier = Modifier
                     .weight(1f)
                     .padding(top = 6.dp)
             ) {
@@ -109,6 +114,7 @@ fun CalculationInputs(
 
     }
 }
+
 
 
 @Preview

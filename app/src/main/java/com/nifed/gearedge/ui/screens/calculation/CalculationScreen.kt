@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.nifed.gearedge.ui.screens.calculation.state.ButtonCalculationEvent
 import com.nifed.gearedge.ui.screens.calculation.state.CalculationEvent
 import com.nifed.gearedge.ui.theme.GearedgeTheme
 
@@ -31,7 +32,36 @@ fun CalculationScreen(
                     inputValue = inputString
                 )
             )
+        },
 
+        // Buttons
+        onIncreaseSize = {
+            calculationViewModel.onUiEvent(
+                calculationEvent = ButtonCalculationEvent.IncreaseSize(
+                    value = 0.1
+                )
+            )
+        },
+        onDecreaseSize = {
+            calculationViewModel.onUiEvent(
+                calculationEvent = ButtonCalculationEvent.DecreaseSize(
+                    value = -0.1
+                )
+            )
+        },
+        onIncreaseFeedRate = {
+            calculationViewModel.onUiEvent(
+                calculationEvent = ButtonCalculationEvent.IncreaseFeedRate(
+                    value = 0.1
+                )
+            )
+        },
+        onDecreaseFeedRate = {
+            calculationViewModel.onUiEvent(
+                calculationEvent = ButtonCalculationEvent.DecreaseFeedRate(
+                    value = -0.1
+                )
+            )
         }
     )
 }
