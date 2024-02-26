@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nifed.gearedge.R
 import com.nifed.gearedge.ui.common.GearEdgeTextField
-import com.nifed.gearedge.ui.screens.calculation.state.ButtonCalculationEvent
 import com.nifed.gearedge.ui.screens.calculation.state.CalculationState
 
 

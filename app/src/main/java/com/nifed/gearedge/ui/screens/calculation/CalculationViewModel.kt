@@ -1,7 +1,6 @@
 package com.nifed.gearedge.ui.screens.calculation
 
 import androidx.compose.runtime.mutableStateOf
-import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.ViewModel
 import com.nifed.gearedge.ui.screens.calculation.state.ButtonCalculationEvent
 import com.nifed.gearedge.ui.screens.calculation.state.CalculationEvent
@@ -73,7 +72,7 @@ class CalculationViewModel: ViewModel() {
 
 
     private fun calculateResult(size: String, feedRate: String = "20.0"): String{
-        val scaleRate: Double =5.6
+        val scaleRate = 5.6
         val sizeDB: Double = if(size.isNotBlank()) size.toDouble() else 0.0
         val feedRateDB: Double = if(feedRate.isNotBlank()) feedRate.toDouble() else 0.0
 
