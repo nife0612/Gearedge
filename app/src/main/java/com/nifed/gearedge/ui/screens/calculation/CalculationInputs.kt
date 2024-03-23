@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.nifed.gearedge.R
 import com.nifed.gearedge.ui.common.GearEdgeTextField
 import com.nifed.gearedge.ui.screens.calculation.state.CalculationState
+import com.nifed.gearedge.ui.theme.GearedgeGrayTheme
 
 
 @Composable
@@ -120,5 +121,7 @@ fun CalculationInputs(
 @Composable
 fun CalculationInputsPreview(){
 
-    CalculationScreen()
+    GearedgeGrayTheme {
+        CalculationScreen()
+    }
 }

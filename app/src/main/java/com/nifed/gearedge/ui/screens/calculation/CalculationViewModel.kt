@@ -92,7 +92,9 @@ class CalculationViewModel: ViewModel() {
                 if (value.toDouble() > 0.0) value.toDouble() else 0.0
             else 0.0
 
-        return String.format("%.2f", valueDB + delta)
+        val result = if (valueDB + delta > 0.0) valueDB + delta else 0.0
+
+        return String.format("%.2f", result)
     }
 
 }

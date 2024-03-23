@@ -7,6 +7,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nifed.gearedge.ui.screens.calculation.state.ButtonCalculationEvent
 import com.nifed.gearedge.ui.screens.calculation.state.CalculationEvent
+import com.nifed.gearedge.ui.theme.GearedgeGrayTheme
 import com.nifed.gearedge.ui.theme.GearedgeTheme
 
 @Composable
@@ -71,7 +72,7 @@ fun CalculationScreen(
 @Preview(showSystemUi = true)
 @Composable
 fun PreviewCalculationScreen(){
-    GearedgeTheme{
+    GearedgeGrayTheme {
         CalculationScreen()
     }
 }
